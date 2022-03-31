@@ -832,7 +832,7 @@ function qcreate_grade_item_update($qcreate, $grades=null) {
         $qcreate->courseid = $qcreate->course;
     }
 
-    if (array_key_exists('cmidnumber', $qcreate)) { // It may not be always present.
+    if (property_exists($qcreate, 'cmidnumber')) { // It may not be always present.
         $params = array('itemname' => $qcreate->name, 'idnumber' => $qcreate->cmidnumber);
     } else {
         $params = array('itemname' => $qcreate->name);
